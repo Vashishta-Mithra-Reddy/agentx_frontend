@@ -4,7 +4,7 @@ import Link from "next/link";
 import ThemeSwitcher from "./theme-switcher";
 import useAuth from "@/hooks/useAuth";
 
-export default function Header({role}:{role:"admin"|"agent"}) {
+export default function Header({role}:{role:"admin"|"agent"|"subagent"}) {
   const { logout } = useAuth();
   
   return (
@@ -25,6 +25,11 @@ export default function Header({role}:{role:"admin"|"agent"}) {
           {role === "agent" && (
             <Link href={"/agent/dashboard"} className="text-lg font-medium hover:text-primary transition duration-300 ease-in-out">
               Agent Dashboard
+            </Link>
+          )}
+          {role === "subagent" && (
+            <Link href={"/subagent/dashboard"} className="text-lg font-medium hover:text-primary transition duration-300 ease-in-out">
+              Sub Agent Dashboard
             </Link>
           )}
         </div>

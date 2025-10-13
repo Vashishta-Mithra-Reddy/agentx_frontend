@@ -50,7 +50,7 @@ export default function RegisterPage() {
             <input
               type="text"
               id="name"
-              className="text-black w-full px-4 py-2 text-lg bg-card border-2 border-foreground/20 focus:border-foreground/50 rounded-xl transition-all placeholder:text-muted-foreground duration-500 focus:outline-none"
+              className="text-foreground w-full px-4 py-2 text-lg bg-card border-2 border-foreground/20 focus:border-foreground/50 rounded-xl transition-all placeholder:text-muted-foreground duration-500 focus:outline-none"
               placeholder="Vashishta Mithra"
               value={name}
               onChange={(e) => setName(e.target.value)}
@@ -64,7 +64,7 @@ export default function RegisterPage() {
             <input
               type="email"
               id="email"
-              className="text-black w-full px-4 py-2 text-lg bg-card border-2 border-foreground/20 focus:border-foreground/50 rounded-xl transition-all placeholder:text-muted-foreground duration-500 focus:outline-none"
+              className="text-foreground w-full px-4 py-2 text-lg bg-card border-2 border-foreground/20 focus:border-foreground/50 rounded-xl transition-all placeholder:text-muted-foreground duration-500 focus:outline-none"
               placeholder="vashishta@gmail.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -88,11 +88,12 @@ export default function RegisterPage() {
               Mobile Number
             </label>
             <input
-              type="tel"
+              type="number"
               id="mobileNumber"
-              className="text-black w-full px-4 py-2 text-lg bg-card border-2 border-foreground/20 focus:border-foreground/50 rounded-xl transition-all placeholder:text-muted-foreground duration-500 focus:outline-none"
+              className="text-foreground w-full px-4 py-2 text-lg bg-card border-2 border-foreground/20 focus:border-foreground/50 rounded-xl transition-all placeholder:text-muted-foreground duration-500 focus:outline-none"
               placeholder="9876543210"
               value={mobileNumber}
+              maxLength={10}
               onChange={(e) => setMobileNumber(e.target.value)} 
               required
             />
@@ -107,7 +108,7 @@ export default function RegisterPage() {
               type="password"
               id="password"
               placeholder="********"
-              className="text-black w-full px-4 py-2 text-lg bg-card border-2 border-foreground/20 focus:border-foreground/50 rounded-xl transition-all placeholder:text-muted-foreground duration-500 focus:outline-none"
+              className="text-foreground w-full px-4 py-2 text-lg bg-card border-2 border-foreground/20 focus:border-foreground/50 rounded-xl transition-all placeholder:text-muted-foreground duration-500 focus:outline-none"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required

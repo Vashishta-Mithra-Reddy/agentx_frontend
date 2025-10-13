@@ -7,9 +7,6 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { toast } from "sonner";
 import Spinner from "@/components/Spinner";
-import AddAgentForm from "@/components/AddAgentForm";
-import FileUpload from "@/components/FileUpload";
-import SubAgentListing from "@/components/SubAgentsListing";
 
 interface Task {
   _id: string;
@@ -26,7 +23,7 @@ interface DistributedTask {
   uploadDate: string;
 }
 
-export default function AgentDashboardPage() {
+export default function SubAgentDashboardPage() {
   const { user, loading } = useAuth();
   const [distributedTasks, setDistributedTasks] = useState<DistributedTask[]>([]);
   const [error, setError] = useState("");
@@ -87,7 +84,6 @@ export default function AgentDashboardPage() {
     <main className="px-8 md:px-28 py-8 md:py-12 font-outfit">
       {error && <p className="text-red-500 text-center mb-4">{error}</p>}
 
-      <div className="rounded-xl px-6 py-8 mb-12">
       <h2 className="text-xl font-semibold mb-8 md:mb-12">
         Hello {user?.name || "Agent"}
         {distributedTasks.length === 0
@@ -156,15 +152,6 @@ export default function AgentDashboardPage() {
           ))}
         </div>
       )}
-      </div>
-
-      <div className="flex flex-col md:flex-row justify-evenly gap-8 px-6">
-        <FileUpload />
-        <AddAgentForm role="subagent"/>
-      </div>
-
-      <SubAgentListing />
-
     </main>
   );
 }

@@ -1,4 +1,5 @@
 import AddAgentForm from "@/components/AddAgentForm";
+import AgentListing from "@/components/AgentsListing";
 import FileUpload from "@/components/FileUpload";
 
 export default function AdminDashboardPage() {
@@ -7,8 +8,9 @@ export default function AdminDashboardPage() {
         <h1 className='md:hidden block text-2xl mb-8 text-center'>Admin Dashboard</h1>
         <div className="flex flex-col md:flex-row justify-evenly gap-8">
         <FileUpload />
-        <AddAgentForm />
+        <AddAgentForm role="agent" />
         </div>
+        <AgentListing />
         </main>
     );
 }
